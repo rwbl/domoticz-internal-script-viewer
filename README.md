@@ -39,13 +39,13 @@ Guest ok = yes
 ```
 
 After samba configuration:
-Ensure to set the directory mask for the domoticz folder to 0777: ```sudo chmod 777 /home/pi/domoticz```
-Then restart samba: ```sudo /etc/init.d/samba restart```
-And finally restart domoticz: ```sudo service domoticz.sh restart```
+* Ensure to set the directory mask for the domoticz folder to 0777: ```sudo chmod 777 /home/pi/domoticz```
+* Restart samba: ```sudo /etc/init.d/samba restart```
+* Restart domoticz: ```sudo service domoticz.sh restart```
 
 ### Windows Network Drive Connect to Shared Folder
 In Windows connect to the Domoticz server shared folder using the Windows Explorer > Connect Network:
-Path for drive Z: is \\192.168.1.60\DoProDomoticz
+Path for drive Z: is \\192.nnn.n.nn\DoProDomoticz
 (DoProDomoticz is defined in the samba configuration)
 
 After this prework, the domoticz database domoticz.db can be copied using CopyFile.
@@ -53,19 +53,15 @@ After this prework, the domoticz database domoticz.db can be copied using CopyFi
 
 ## Settings
 The viewer uses following settings(stored in domoticzinternalscriptviewer.set):
-***shareddrive*** - The Windows shared drive. Default=Z:\.
-***databasefile*** - Domoticz database file copied and stored locally in the application folder. Default=domoticz.db.
-***refreshatstart*** - Flag to copy the database file at application start. Default=0.
-***sqlquery*** - SQL SELECT statement to read the records from table EventMaster. Default=SELECT Name,Interpreter,XMLStatement,Status FROM EventMaster WHERE Interpreter="dzVents" ORDER BY Interpreter,Name;
+* ***shareddrive*** - The Windows shared drive. Default=Z:\.
+* ***databasefile*** - Domoticz database file copied and stored locally in the application folder. Default=domoticz.db.
+* ***refreshatstart*** - Flag to copy the database file at application start. Default=0.
+* ***sqlquery*** - SQL SELECT statement to read the records from table EventMaster. Default=````SELECT Name,Interpreter,XMLStatement,Status FROM EventMaster WHERE Interpreter="dzVents" ORDER BY Interpreter,Name;````
 
-##Disclaimer
-THIS APPLICATION IS PROVIDED BY THE AUTHOR “AS IS” AND ANY EXPRESS OR IMPLIED 
-WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
-MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT 
-SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, 
-EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
-STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY 
-OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH 
-DAMAGE.
+## Disclaimer
+THIS APPLICATION IS PROVIDED BY THE AUTHOR “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, 
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGE.
