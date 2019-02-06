@@ -13,15 +13,15 @@ From the database, table EventMaster, the all records with fields Name, Interpre
 Selecting a script shows the script code (field XMLStatement) in a textarea.
 
 ## Software
-* Raspberry Pi Raspian Linux 4.14.79-v7+ #1159 with Domoticz v4.1 (BETA). The beta release is used to obtain the latest updates.
+* Raspberry Pi Raspian Linux 4.14.79-v7+ #1159 with Domoticz v4.1 (BETA).
 * Domoticz Home Automation System V4.1
 * Lazarus 2.0.0
 
 ## Install
-Ensure to create and connect to the shared folder.
-Install the application in a folder of choice and start domoticzinternalscriptviewer.exe.
+Create and connect to the shared folder (see next how to).
+Install the application in a folder of choice and start ***domoticzinternalscriptviewer.exe***.
 
-### Domoticz Server Shared Folder
+#### Domoticz Server Shared Folder
 The Raspberry Pi shared folder uses samba and is configured with:
 ```sudo nano /etc/samba/smb.conf```
 Content:
@@ -37,13 +37,12 @@ directory mask = 0777
 Public = yes
 Guest ok = yes
 ```
-
-After samba configuration:
+After the samba configuration:
 * Ensure to set the directory mask for the domoticz folder to 0777: ```sudo chmod 777 /home/pi/domoticz```
 * Restart samba: ```sudo /etc/init.d/samba restart```
 * Restart domoticz: ```sudo service domoticz.sh restart```
 
-### Windows Network Drive Connect to Shared Folder
+#### Windows Network Drive Connect to Shared Folder
 In Windows connect to the Domoticz server shared folder using the Windows Explorer > Connect Network:
 Path for drive Z: is \\192.nnn.n.nn\DoProDomoticz
 (DoProDomoticz is defined in the samba configuration)
