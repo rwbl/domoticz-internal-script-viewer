@@ -5,7 +5,7 @@
 * To export the scripts to the clipboard, text file or HTML file
 * To develop the application in Lazarus running on a Windows 10 device
 
-![domoticzinternalscriptviewer-s](https://user-images.githubusercontent.com/47274144/52335585-0a71a800-2a03-11e9-865c-6fe34c2e50e7.png)
+![domoticzinternalscriptviewer-s](https://user-images.githubusercontent.com/47274144/53641943-bab48400-3c30-11e9-9790-5772cf0c17b1.png)
 
 ## Solution
 On the Domoticz Server (Raspberry Pi 3B+) the folder /home/pi/domoticz is defined as shared folder(samba).
