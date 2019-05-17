@@ -15,9 +15,9 @@ From the database, table EventMaster, the all records with fields Name, Interpre
 Selecting a script shows the script code (field XMLStatement) in a textarea.
 
 ## Software
-* Raspberry Pi Raspian Linux 4.14.79-v7+ #1159 with Domoticz v4.1 (BETA).
-* Domoticz Home Automation System V4.1
-* Lazarus 2.0.0
+* Raspberry Pi Raspian Linux 4.14.79-v7+ #1159.
+* Domoticz Home Automation System V4.10717
+* FPC 3.0.4 and Lazarus 2.0.2
 
 ## Install
 Create and connect to the shared folder (see next how to).
