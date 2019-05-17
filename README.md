@@ -14,6 +14,9 @@ The viewer copies, from drive Z:, the Domoticz database, domoticz.db, to the loc
 From the database, table EventMaster, the all records with fields Name, Interpreter, XMLStatement and Status are selected and displayed in a grid.
 Selecting a script shows the script code (field XMLStatement) in a textarea.
 
+## Hints
+The applications enables to download the Domoticz database from the Domoticz server. It is an option to backup the Domoticz database.
+
 ## Software
 * Raspberry Pi Raspian Linux 4.14.79-v7+ #1159.
 * Domoticz Home Automation System V4.10717
