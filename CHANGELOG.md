@@ -1,7 +1,7 @@
-### r20190301
+### v1.01 (Build 20190301)
 
 * NEW: Export file-by-file
 
-### r20190201
+### v1.00 (Build 20190201)
 
 * NEW: First version
