@@ -1,5 +1,4 @@
 ### TODO Domoticz Internal Script Viewer
-_(Status 20190301)_
+Status:20190517
 
-* NEW: Create UNIX version
-
+NEW: Create UNIX version
