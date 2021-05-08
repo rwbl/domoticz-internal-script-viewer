@@ -9,6 +9,10 @@
 
 **Developed for personal use only under the GNU GENERAL PUBLIC LICENSE Version 3.**
 
+![domisv-m](https://user-images.githubusercontent.com/47274144/117531946-51d1af00-afe5-11eb-99b0-dc5c22441f3d.png)
+
+![domisv-s](https://user-images.githubusercontent.com/47274144/117531947-526a4580-afe5-11eb-8b73-e43b1cdbff94.png)
+
 ## Solution
 On the Domoticz Server (Raspberry Pi 3B+) the folder /home/pi/domoticz is defined as shared folder(samba).
 In Windows a network drive is defined (Z: as an example) using the Domoticz shared folder.
