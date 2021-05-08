@@ -1,4 +1,4 @@
-# Changelog domoticz-internal-script-viewer
+# ChangeLog domoticz-internal-script-viewer
 
 ### v1.1.0 (Build 20210507)
 * NEW: Menu Edit - Filter to select scripts, i.e. Interpreter = 'dzVents' or Status = 1 or combine with AND.
