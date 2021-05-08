@@ -1,0 +1,278 @@
+object Settings: TSettings
+  Left = 720
+  Height = 550
+  Top = 191
+  Width = 550
+  BorderIcons = []
+  BorderStyle = bsToolWindow
+  Caption = 'Settings'
+  ClientHeight = 550
+  ClientWidth = 550
+  DesignTimePPI = 120
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object PanelButtons: TPanel
+    Left = 0
+    Height = 36
+    Top = 514
+    Width = 550
+    Align = alBottom
+    ClientHeight = 36
+    ClientWidth = 550
+    ParentFont = False
+    TabOrder = 0
+    object ButtonOK: TButton
+      Left = 453
+      Height = 30
+      Top = 3
+      Width = 94
+      Align = alRight
+      BorderSpacing.Around = 2
+      Caption = '&OK'
+      ModalResult = 1
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ButtonCancel: TButton
+      Left = 357
+      Height = 30
+      Top = 3
+      Width = 94
+      Align = alRight
+      BorderSpacing.Around = 2
+      Cancel = True
+      Caption = 'Cancel'
+      ModalResult = 2
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object GroupBoxSharedDrive: TGroupBox
+    Left = 2
+    Height = 92
+    Top = 2
+    Width = 546
+    Align = alTop
+    BorderSpacing.Around = 2
+    Caption = 'Shared Drive'
+    ClientHeight = 67
+    ClientWidth = 542
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    object EditSharedDrive: TEdit
+      Left = 5
+      Height = 28
+      Top = 5
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      ParentFont = False
+      TabOrder = 0
+      Text = 'EditSharedDrive'
+    end
+    object LabelSharedDrive: TLabel
+      Left = 2
+      Height = 17
+      Top = 38
+      Width = 538
+      Align = alTop
+      Alignment = taCenter
+      BorderSpacing.Around = 2
+      Caption = 'Set the shared drive of the Domoticz server, i.e. Z: or Y:\domoticz\.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroupBoxDatabaseFile: TGroupBox
+    Left = 2
+    Height = 80
+    Top = 96
+    Width = 546
+    Align = alTop
+    BorderSpacing.Around = 2
+    Caption = 'Database Filename'
+    ClientHeight = 55
+    ClientWidth = 542
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    object EditDatabaseFile: TEdit
+      Left = 5
+      Height = 28
+      Top = 5
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      ParentFont = False
+      TabOrder = 0
+      Text = 'domoticz.db'
+    end
+    object LabelDatabaseFile: TLabel
+      Left = 2
+      Height = 17
+      Top = 38
+      Width = 538
+      Align = alTop
+      Alignment = taCenter
+      BorderSpacing.Around = 2
+      Caption = 'Set the filename of the Domoticz database. Default: domoticz.db.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroupBoxSQLQuery: TGroupBox
+    Left = 2
+    Height = 170
+    Top = 178
+    Width = 546
+    Align = alTop
+    BorderSpacing.Around = 2
+    Caption = 'SQL Query && Filter'
+    ClientHeight = 145
+    ClientWidth = 542
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 3
+    object LabelSqlQuery: TLabel
+      Left = 2
+      Height = 17
+      Top = 56
+      Width = 538
+      Align = alTop
+      Alignment = taCenter
+      BorderSpacing.Around = 2
+      Caption = 'Set the sql query to select the scripts from the database.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object MemoSqlQuery: TMemo
+      Left = 5
+      Height = 46
+      Top = 5
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      Lines.Strings = (
+        'SELECT Name,Interpreter,XMLStatement,Status '
+        'FROM EventMaster '
+        'WHERE Interpreter="dzVents" '
+        'ORDER BY Interpreter,Name;'
+      )
+      ParentFont = False
+      TabOrder = 0
+    end
+    object LabelFilter: TLabel
+      Left = 5
+      Height = 20
+      Top = 78
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = 'Filter'
+      ParentColor = False
+      ParentFont = False
+    end
+    object EditFilter: TEdit
+      Left = 5
+      Height = 28
+      Top = 103
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      ParentFont = False
+      TabOrder = 1
+      Text = 'Filter'
+      TextHint = 'Define filter, like Interpreter="dzVents" ot Status=1.'
+    end
+  end
+  object GroupBoxVarious: TGroupBox
+    Left = 2
+    Height = 162
+    Top = 350
+    Width = 546
+    Align = alClient
+    BorderSpacing.Around = 2
+    Caption = 'Various'
+    ClientHeight = 137
+    ClientWidth = 542
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    object CheckBoxRefreshAtStart: TCheckBox
+      Left = 5
+      Height = 24
+      Top = 5
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = 'Refresh at Start'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object LabelRefreshAtStart: TLabel
+      Left = 2
+      Height = 17
+      Top = 34
+      Width = 538
+      Align = alTop
+      Alignment = taCenter
+      BorderSpacing.Around = 2
+      Caption = 'At start update the database from the Domoticz server.'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+    end
+    object LabelSyntaxHighlightingHint: TLabel
+      Left = 5
+      Height = 40
+      Top = 81
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = 'This can be changed by editing the constants, object and keywords in the ini file (domoticzinternalscriptviewer.ini).'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object LabelSyntaxHighlighting: TLabel
+      Left = 5
+      Height = 20
+      Top = 56
+      Width = 532
+      Align = alTop
+      BorderSpacing.Around = 5
+      Caption = 'Syntax Highlighting'
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end

@@ -1,0 +1,38 @@
+object FormDownload: TFormDownload
+  Left = 853
+  Height = 74
+  Top = 209
+  Width = 288
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Download Domoticz Database'
+  ClientHeight = 74
+  ClientWidth = 288
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poMainFormCenter
+  LCLVersion = '2.0.12.0'
+  object ButtonDownload: TButton
+    Left = 8
+    Height = 25
+    Top = 41
+    Width = 272
+    Align = alBottom
+    BorderSpacing.Around = 8
+    Caption = 'Start'
+    OnClick = ButtonDownloadClick
+    ParentFont = False
+    TabOrder = 0
+  end
+  object LabelStatus: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 272
+    Align = alTop
+    BorderSpacing.Around = 8
+    Caption = 'Status'
+    ParentColor = False
+    ParentFont = False
+  end
+end

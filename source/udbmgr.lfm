@@ -1,0 +1,38 @@
+object DBMgr: TDBMgr
+  OnCreate = DataModuleCreate
+  OldCreateOrder = False
+  Height = 411
+  HorizontalOffset = 1020
+  VerticalOffset = 160
+  Width = 638
+  PPI = 120
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = SQLite3Connection1
+    Left = 95
+    Top = 120
+  end
+  object SQLQueryDomoticz: TSQLQuery
+    FieldDefs = <>
+    Database = SQLite3Connection1
+    Transaction = SQLTransaction1
+    Params = <>
+    Left = 324
+    Top = 120
+  end
+  object SQLite3Connection1: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    AlwaysUseBigint = False
+    Left = 95
+    Top = 30
+  end
+  object DataSourceDomoticz: TDataSource
+    DataSet = SQLQueryDomoticz
+    OnDataChange = DataSourceDomoticzDataChange
+    Left = 324
+    Top = 26
+  end
+end
