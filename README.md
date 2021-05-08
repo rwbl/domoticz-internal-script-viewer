@@ -1,11 +1,13 @@
 # Domoticz Internal Script Viewer
 
 # Objectives
-* To view offline the Domoticz internal scripts (focus on dzVents scripts), which are created using the web ui event editor
-* To export the scripts to the clipboard, text file or HTML file
-* To develop the application in Lazarus running on a Windows 10 device
+* To view offline the Domoticz internal scripts (focus on dzVents scripts), which are created using the web ui event editor.
+* To filter by script type.
+* To highlight syntax depending selected script type, i.e. XML, Python and for dzVents some Lua constants, keywords, objects.
+* To export the scripts to the clipboard, text file or HTML file.
+* To develop the application in Lazarus running on a Windows 10 device.
 
-![domoticzinternalscriptviewer-s](https://user-images.githubusercontent.com/47274144/53641943-bab48400-3c30-11e9-9790-5772cf0c17b1.png)
+**Developed for personal use only under the GNU GENERAL PUBLIC LICENSE Version 3.**
 
 ## Solution
 On the Domoticz Server (Raspberry Pi 3B+) the folder /home/pi/domoticz is defined as shared folder(samba).
@@ -15,12 +17,13 @@ From the database, table EventMaster, the all records with fields Name, Interpre
 Selecting a script shows the script code (field XMLStatement) in a textarea.
 
 ## Hints
-The applications enables to download the Domoticz database from the Domoticz server. It is an option to backup the Domoticz database.
+The application enables to download the Domoticz database from the Domoticz server. It is therfore also an option to backup the Domoticz database.
 
 ## Software
 * Raspberry Pi Raspian Linux 4.14.79-v7+ #1159.
-* Domoticz Home Automation System V4.10717
-* FPC 3.0.4 and Lazarus 2.0.2
+* Domoticz Home Automation System 2021.1.
+* Developed with Lazarus v2.0.12 and FPC 3.2.0 - Tested under Windows 10, Ubuntu 20.04.
+* Note: Under Ubuntu ensure to install: sudo apt-get install libsqlite3-dev.
 
 ## Install
 Create and connect to the shared folder (see next how to).
@@ -43,9 +46,9 @@ Public = yes
 Guest ok = yes
 ```
 After the samba configuration:
-* Ensure to set the directory mask for the domoticz folder to 0777: ```sudo chmod 777 /home/pi/domoticz```
-* Restart samba: ```sudo /etc/init.d/samba restart```
-* Restart domoticz: ```sudo service domoticz.sh restart```
+* Ensure to set the directory mask for the domoticz folder to 0777: sudo chmod 777 /home/pi/domoticz
+* Restart samba: sudo /etc/init.d/samba restart
+* Restart domoticz: sudo service domoticz.sh restart
 
 #### Windows Network Drive Connect to Shared Folder
 In Windows connect to the Domoticz server shared folder using the Windows Explorer > Connect Network:
@@ -56,11 +59,43 @@ After this prework, the domoticz database domoticz.db can be copied using CopyFi
 (simple solution using the standard lazarus fileutil functions).
 
 ## Settings
-The viewer uses following settings(stored in domoticzinternalscriptviewer.set):
-* ***shareddrive*** - The Windows shared drive. Default=Z:\.
-* ***databasefile*** - Domoticz database file copied and stored locally in the application folder. Default=domoticz.db.
-* ***refreshatstart*** - Flag to copy the database file at application start. Default=0.
-* ***sqlquery*** - SQL SELECT statement to read the records from table EventMaster. Default=````SELECT Name,Interpreter,XMLStatement,Status FROM EventMaster WHERE Interpreter="dzVents" ORDER BY Interpreter,Name;````
+The viewer uses following settings(stored in domoticzinternalscriptviewer.ini):
+### Section general
+**shareddrive**
+The Windows shared drive, i.e. Z:\ or Y:\domoticz\.
+**databasefile**
+Domoticz database file copied and stored locally in the application folder. Default=domoticz.db.
+**refreshatstart**
+Flag to copy the database file at application start. Default=0.
+**sqlquery**
+SQL SELECT statement to read the records from table EventMaster.
+Default:
+SELECT Name,Interpreter,XMLStatement,Status FROM EventMaster ORDER BY Interpreter,Name;
+**filter**
+Filter for selecting script entries. 
+Default: Interpreter="dzVents"
+Other filter examples: 
+Select active dzVents scripts: Interpreter="dzVents" and Status=1
+
+### Section synedit
+**gutter**
+Show the left gutter: 0=Not visible, 1=Visible.
+Default: 0
+**fontsize**
+Editor font size.
+Default: 10
+
+The next settings are related to dzVents or Lua syntax highlighting.
+Change as required - these are just try outs.
+**constants**
+Highlighting constants for dzVents.
+Default: DATA,DEVICES,HTTPRESPONSES,LOGGING,TIMER
+**objects**
+Highlighting objects for dzVents.
+Default: LOCAL
+**keywords**
+Highlighting keywords for dzVents.
+Default: ACTIVE,CUSTOMEVENTS,DATA,DEVICES,DO,DUMP,ELSE,END,EXECUTE,FALSE,FILTER,FIND,FOR,FOREACH,FORMAT,FUNCTION,GROUPS,HELPERS,HTTPRESPONSES,IF,IN,LEVEL,LOG,LOGGING,MARKER,NEXT,NOTIFY,ON,REDUCE,RETURN,SCENES,SECURITY,SHELLCOMMANDRESPONSES,SWITCHOFF,SWITCHON,SYSTEM,THEN,TIME,TIMER,TRUE,VARIABLES
 
 ## Disclaimer
 THIS APPLICATION IS PROVIDED BY THE AUTHOR “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
