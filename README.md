@@ -65,39 +65,39 @@ After this prework, the domoticz database domoticz.db can be copied using CopyFi
 ## Settings
 The viewer uses following settings(stored in domoticzinternalscriptviewer.ini):
 ### Section general
-**shareddrive**
+#### shareddrive
 The Windows shared drive, i.e. Z:\ or Y:\domoticz\.
-**databasefile**
+#### databasefile
 Domoticz database file copied and stored locally in the application folder. Default=domoticz.db.
-**refreshatstart**
+#### refreshatstart
 Flag to copy the database file at application start. Default=0.
-**sqlquery**
+#### sqlquery
 SQL SELECT statement to read the records from table EventMaster.
 Default:
 SELECT Name,Interpreter,XMLStatement,Status FROM EventMaster ORDER BY Interpreter,Name;
-**filter**
+#### filter
 Filter for selecting script entries. 
 Default: Interpreter="dzVents"
 Other filter examples: 
 Select active dzVents scripts: Interpreter="dzVents" and Status=1
 
 ### Section synedit
-**gutter**
+#### gutter
 Show the left gutter: 0=Not visible, 1=Visible.
 Default: 0
-**fontsize**
+#### fontsize
 Editor font size.
 Default: 10
 
 The next settings are related to dzVents or Lua syntax highlighting.
 Change as required - these are just try outs.
-**constants**
+#### constants
 Highlighting constants for dzVents.
 Default: DATA,DEVICES,HTTPRESPONSES,LOGGING,TIMER
-**objects**
+#### objects
 Highlighting objects for dzVents.
 Default: LOCAL
-**keywords**
+#### keywords
 Highlighting keywords for dzVents.
 Default: ACTIVE,CUSTOMEVENTS,DATA,DEVICES,DO,DUMP,ELSE,END,EXECUTE,FALSE,FILTER,FIND,FOR,FOREACH,FORMAT,FUNCTION,GROUPS,HELPERS,HTTPRESPONSES,IF,IN,LEVEL,LOG,LOGGING,MARKER,NEXT,NOTIFY,ON,REDUCE,RETURN,SCENES,SECURITY,SHELLCOMMANDRESPONSES,SWITCHOFF,SWITCHON,SYSTEM,THEN,TIME,TIMER,TRUE,VARIABLES
 
